@@ -1,0 +1,31 @@
+﻿
+<h3>Create New Employee</h3>
+
+<form  action="/Home/Create" method="post">
+    <label>Employee Id  : </label>
+    <input name="EmployeeId" type="text" />
+    <br/><br/>
+
+    <label>Employee Name  : </label>
+    <input name="EmployeeName" type="text" />
+    <br/><br/>
+
+
+     <label>Sal  : </label>
+    <input name="Sal" type="text" />
+    <br/><br/>
+
+    <label>Deptno  : </label>
+    <input name="Deptno" type="text" />
+    <br/><br/>
+
+    <input type="submit" value="Create" />
+</form>
+
+
+@{
+    if(ViewBag.RequestType == "POST")
+    {
+        <h1>@ViewBag.ErrorMessage</h1>
+    }
+}

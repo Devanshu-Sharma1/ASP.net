@@ -1,0 +1,38 @@
+﻿@using WebApplication1.Models
+@model  Employee
+
+
+<h3>Edit Employee</h3>
+
+ 
+<form  action="/Home/Edit" method="post">
+    <label>Employee Id  : </label>
+    <input name="EmployeeId" type="text" readonly value="@Model.EmployeeId" />
+    <br/><br/>
+
+    <label>Employee Name  : </label>
+    <input name="EmployeeName" type="text" value="@Model.EmployeeName" />
+    <br/><br/>
+
+     <label>Sal  : </label>
+    <input name="Sal" type="text" value="@Model.Sal" />
+    <br/><br/>
+
+    <label>Deptno  : </label>
+    <input name="Deptno" type="text" value="@Model.Deptno" />
+    <br/><br/>
+
+    <input type="submit" value="Edit" />
+</form>
+
+
+@{
+    if(ViewBag.RequestType == "POST")
+    {
+        <h1>@ViewBag.ErrorMessage</h1>
+    }
+}
+
+
+<hr/>
+ <a href="/Home/Index">Back to List</a>

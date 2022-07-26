@@ -1,0 +1,38 @@
+﻿@using WebApplication1.Models
+@model List<Employee>
+
+<h3>Employee Details </h3>
+<hr/>
+
+@* 
+    <h3> @ViewBag.Message </h3>  
+*@
+
+<a href="/Home/Create">Create New</a>
+
+<table border="2" width="600">
+    <tr>
+        <th>Employee Id</th>
+        <th>Employee Name</th>
+        <th>Sal</th>
+        <th>Deptno</th>
+        <th></th>
+    </tr>
+
+    @foreach(Employee item in Model)
+    {
+         <tr>
+            <td>@item.EmployeeId</td>
+            <td>@item.EmployeeName</td>
+            <td>@item.Sal</td>
+            <td>@item.Deptno</td>     
+            <td>
+                <a href="/Home/Details/@item.EmployeeId">Details</a> |
+                <a href="/Home/Edit/@item.EmployeeId">Edit</a> |
+                <a href="/Home/Delete/@item.EmployeeId">Delete</a>  
+            </td>
+         </tr>
+    }
+
+   
+</table>
